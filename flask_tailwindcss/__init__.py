@@ -5,8 +5,10 @@ __email__ = "pyunghyuk@likelion.net"
 __version__ = "0.1.0"
 
 from flask import Flask, render_template
+from flask_assets import Bundle
 
 from flask_tailwindcss.config import config
+from flask_tailwindcss.extensions import assets
 
 
 def create_app(config_name):
@@ -15,9 +17,17 @@ def create_app(config_name):
     app.config.from_object(app_config)
     app_config.init_app(app)
 
+    init_assets(app)
     init_bp(app)
 
     return app
+
+
+def init_assets(app):
+    assets.init_app(app)
+    css_all = Bundle("src/css/*.css", filters="postcss", output="dist/css/main.css")
+
+    assets.register("css_all", css_all)
 
 
 def init_bp(app):

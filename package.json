@@ -1,0 +1,26 @@
+{
+  "name": "flask-tailwindcss",
+  "version": "1.0.0",
+  "description": "====================== Flask with Tailwindcss ======================",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@yoophi.github.com:yoophi/flask-tailwindcss"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.2",
+    "@tailwindcss/ui": "^0.7.2",
+    "autoprefixer": "^10.2.4",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.3"
+  }
+}

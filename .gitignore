@@ -101,5 +101,10 @@ ENV/
 # mypy
 .mypy_cache/
 
+# nodejs dependencies
+/node_modules
+/.pnp
+.pnp.js
+
 # IDE settings
 .vscode/

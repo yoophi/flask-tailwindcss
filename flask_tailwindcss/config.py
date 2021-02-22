@@ -1,9 +1,14 @@
 import os
 
 APP_DIR = os.path.dirname(__file__)
+BASE_POSTCSS_BIN = os.path.join(
+    os.path.dirname(APP_DIR), "node_modules/postcss-cli/bin/postcss"
+)
 
 
 class Config:
+    POSTCSS_BIN = os.environ.get("POSTCSS_BIN", BASE_POSTCSS_BIN)
+
     @staticmethod
     def init_app(app):
         pass
