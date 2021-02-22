@@ -26,11 +26,17 @@ def create_app(config_name):
 def init_assets(app):
     assets.init_app(app)
     css_all = Bundle("src/css/*.css", filters="postcss", output="dist/css/main.css")
+    js_base = Bundle("src/js/alpine.js", output="dist/js/base.js")
 
     assets.register("css_all", css_all)
+    assets.register("js_base", js_base)
 
 
 def init_bp(app):
     @app.route("/")
     def index():
         return render_template("index.html")
+
+    @app.route("/alpine")
+    def alpine():
+        return render_template("alpine.html")

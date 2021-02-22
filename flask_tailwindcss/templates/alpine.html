@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Flask with Tailwind CSS</title>
+    {% assets 'css_all' %}
+    <link rel="stylesheet" href="{{ ASSET_URL }}"></link>
+    {% endassets %}
+    {% assets 'js_base' %}
+    <script src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+</head>
+<body>
+
+<div x-ref="demo"
+     class="flex w-full md:w-1/2 items-start p-4 md:p-10 justify-center bg-gray-300 md:h-full overflow-y-scroll">
+
+    <div class="md:w-2/3 mx-auto flex flex-col">
+        <div x-data="greet()">
+            <button @click="showMessage()"
+                    class="mb-8 justify-center flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Greet Me
+            </button>
+            <div>Message: <span x-text="messageDisplay">Hello Alpine.js</span></div>
+        </div>
+        <script type="text/javascript">
+            function greet() {
+                return {
+                    message: "Hello Alpine.js",
+                    messageDisplay: "",
+                    showMessage() {
+                        this.messageDisplay = this.message;
+                    },
+                };
+            }
+        </script>
+    </div>
+</div>
+
+</body>
+</html>
