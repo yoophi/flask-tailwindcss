@@ -7,6 +7,7 @@ BASE_POSTCSS_BIN = os.path.join(
 
 
 class Config:
+    ASSETS_DEBUG = (os.environ.get("ASSETS_DEBUG", "False") == "True")
     POSTCSS_BIN = os.environ.get("POSTCSS_BIN", BASE_POSTCSS_BIN)
 
     @staticmethod
