@@ -28,6 +28,8 @@ Features
 
 * TODO
 
+Started with https://jakubsvehla.me/posts/setting-up-tailwind-css-with-flask/
+
 Credits
 -------
 
